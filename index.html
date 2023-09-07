@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+<h1 data-testid="slackUserName">
+    Timilehin Adedara
+</h1>
+<img data-testid="slackDisplayImage" src="image.jpeg"/>
+<div class="date">
+<p class="day"  data-testid="currentDayOfTheWeek" id="day"></p>
+
+<p class="time" data-testid="currentUTCTime" id="time"></p>
+</div>
+<h2 data-testid="myTrack">
+    FrontEnd
+</h2>
+<a data-testid="githubURL" href="https://github.com/Timmyuiop88/"> Github</a>
+    </div>
+<script>
+ 
+
+
+   const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+ const d = new Date().getDay();
+
+ const now = new Date();
+const year = now.getUTCFullYear();
+const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+const day = String(now.getUTCDate()).padStart(2, '0');
+const hours = String(now.getUTCHours()).padStart(2, '0');
+const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+
+const utcString = `${hours}:${minutes}:${seconds}`;
+
+
+document.getElementById('day').innerHTML = days[d];
+document.getElementById('time').innerHTML = utcString;    
+    
+
+
+
+
+    
+</script>
+</body>
+</html>
